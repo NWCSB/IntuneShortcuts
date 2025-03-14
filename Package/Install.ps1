@@ -35,11 +35,13 @@ Import-Csv -Path "$repoPath\Apps.csv" | ForEach-Object {
         }
 
         # Create shortcut in Public Desktop
-        $object = New-Object -ComObject WScript.Shell
-        $shortcut = $object.CreateShortcut($publicPath + "\$name.lnk")
-        $shortcut.TargetPath = $link
-        $shortcut.IconLocation = $icon
-        $shortcut.Save()
+        if ($link -and $icon) { 
+            $object = New-Object -ComObject WScript.Shell
+            $shortcut = $object.CreateShortcut($publicPath + "\$name.lnk")
+            $shortcut.TargetPath = $link
+            $shortcut.IconLocation = $icon
+            $shortcut.Save()
+        }
     }
     catch {
         Write-Error $($_.Exception.Message)
