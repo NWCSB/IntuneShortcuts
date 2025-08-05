@@ -52,7 +52,7 @@ Import-Csv -Path "$repoPath\Apps.csv" | ForEach-Object {
 
 # Create detection file if successful
 if ($success) {
-    New-Item -Path $repoPath -Name $packageName -ItemType File -Value $PackageVersion -Force | Out-Null
+    New-Item -Path $repoPath -Name $packageName -ItemType File -Value $packageVersion -Force | Out-Null
     Write-Output "Success"
     Exit 0
 }
