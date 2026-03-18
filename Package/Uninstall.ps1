@@ -1,5 +1,5 @@
 $packageName = "IntuneShortcuts"
-$packageVersion = "1.0"
+$packageVersion = "1.1"
 
 $configPath = "C:\Intune"
 $publicPath = "C:\Users\Public\Desktop"
